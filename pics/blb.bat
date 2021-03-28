@@ -1,10 +1,11 @@
   
-
-call set /a x = 0
+@echo on
+setlocal ENABLEDELAYEDEXPANSION
+call set /a x = %2 
 for /F "delims="  %%a in ('dir /b IMG*.jpg') do ( 
 	call set /a x = !x! + 1
-	rem echo  !x!
-	echo file '%%a' x=!x!	 >> 1.txt
+	 
+	%1 	%%a	 0!x!.jpg
 )
 @echo off  
   
